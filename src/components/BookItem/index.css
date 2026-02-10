@@ -1,0 +1,35 @@
+.cover-pic {
+  height: 33vh;
+  width: 14vw;
+}
+.link {
+  text-decoration: none;
+}
+
+.single-book-item {
+  width: 23vw;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border: solid lightblue 2px;
+}
+.book-title {
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .cover-pic {
+    width: 22vw;
+    height: 19vh;
+  }
+  .single-book-item {
+    width: 23vw;
+    height: 23vh;
+    font-size: 7px;
+  }
+  .book-title {
+    font-size: 7px;
+  }
+}

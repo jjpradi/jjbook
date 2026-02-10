@@ -1,0 +1,150 @@
+.top-books-header {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  width: 70vw;
+}
+.find-button {
+  background: rgba(2, 132, 199, 1);
+  color: #ffffff;
+
+  border: solid blue;
+  height: 4vh;
+}
+
+.top-books-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  align-items: center;
+
+  list-style-type: none;
+}
+
+.home-books-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: #ffffff;
+
+  min-width: 70vw;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+
+  background: rgba(245, 247, 250, 1);
+}
+.footer-part {
+  height: 25vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.slider-cont {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.books-bg {
+  background: rgba(255, 255, 255, 1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content:;
+  align-items: center;
+}
+
+.empty-cont {
+  height: 45px;
+}
+.slider {
+  width: 70vw;
+}
+
+@media (max-width: 767px) {
+  .home-page {
+    margin-top: 7px;
+  }
+  .find-btn {
+    display: none;
+  }
+
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(245, 247, 250, 1);
+  }
+
+  .sm-header-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    width: 80vw;
+    height: 14px;
+  }
+
+  .books-bg {
+    height: 5vh;
+  }
+
+  .bg {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .error-image {
+    width: 30vw;
+  }
+
+  .logout-button {
+    background: rgba(2, 132, 199, 1);
+    color: #ffffff;
+    border: solid blue;
+    width: 17vw;
+    height: 4vh;
+  }
+  .footer-part {
+    margin-top: 23vh;
+    width: 70vw;
+    height: 25vh;
+  }
+}
+@media (min-width: 767px) {
+  .sm-header-list {
+    display: none;
+  }
+
+  .find-btn-2 {
+    display: none;
+  }
+}

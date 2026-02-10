@@ -1,0 +1,40 @@
+.foot {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-size {
+  height: 2vh;
+}
+.lis {
+  background-color: antiquewhite;
+}
+.ic-list {
+  display: flex;
+  width: 14vw;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-right: 25px;
+}
+
+@media (max-width: 767px) {
+  .foot {
+    height: 5vh;
+    width: 40vw;
+  }
+  .ic-list{
+
+width: 28vw;
+
+  }
+  .icon-size {
+    height: 3vh;
+  }
+}

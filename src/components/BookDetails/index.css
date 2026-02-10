@@ -1,0 +1,48 @@
+.book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  background-color: #ffffff;
+  margin: 23px;
+  padding: 33px;
+}
+.span-item {
+  color: rgba(2, 132, 199, 1);
+}
+
+.footer-part {
+}
+.star-logo {
+  height: 2vh;
+
+  color: gold;
+}
+.book-info {
+  width: 30vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hr {
+  height: 3px;
+  background-color: black;
+}
+
+.book-details-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(245, 247, 250, 1);
+}
+
+@media (max-width: 767px) {
+  .book-info {
+    width: 60vw;
+  }
+}
