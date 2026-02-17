@@ -109,6 +109,7 @@ class BookDetails extends Component {
       aboutBook,
 
       aboutAuthor,
+      id
     } = bookDetails
 
     return (
@@ -119,9 +120,6 @@ class BookDetails extends Component {
           console.log(readstatus)
 
           const onChangeStatus = event => {
-            const {bookDetails} = this.state
-            console.log(bookDetails)
-            console.log(event.target.value)
 
             console.log(readstatus, bookDetails.id)
 
@@ -148,14 +146,12 @@ class BookDetails extends Component {
                       <select onChange={e => onChangeStatus(e)}>
                         {bookshelvesList.map(e => (
                           <option
-                            selected={readStatus == e.label}
+                            selected={readStatus === e.label}
                             value={e.label}
                             id={e.label}
                           >
-
                             {e.label}
                           </option>
-                          
                         ))}
                       </select>
                       <span className="span-item">
@@ -218,7 +214,7 @@ class BookDetails extends Component {
         return this.renderFailure()
 
       default:
-        null
+        return null
     }
   }
 }

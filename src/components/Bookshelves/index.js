@@ -41,7 +41,7 @@ const bookshelvesList = [
 ]
 
 class Bookshelves extends Component {
-  static contextType = Context
+  
 
   state = {
     searchInput: '',
@@ -143,17 +143,16 @@ class Bookshelves extends Component {
 
     const {gettingList} = this.context
     if (gettingList) {
-      const {filteredlist} = this.state
       getList(filteredlist)
     }
     console.log('common')
 
     let newVal
-    if (booksList.length == filteredlist.length) {
+    if (booksList.length === filteredlist.length) {
       newVal = 0
     } else {
       newVal = filteredlist.findIndex(
-        e => e.id == booksList[booksList.length - 1].id,
+        e => e.id === booksList[booksList.length - 1].id,
       )
     }
 
@@ -193,7 +192,7 @@ class Bookshelves extends Component {
       const data = await response.json()
       console.log(response)
 
-      if (response.ok == true) {
+      if (response.ok === true) {
         this.successView(data)
       } else {
         this.failureView(data)
@@ -208,7 +207,7 @@ class Bookshelves extends Component {
   onPrev = () => {
     const {filteredlist, booksList} = this.state
 
-    const newVal = filteredlist.findIndex(e => e.id == booksList[0].id)
+    const newVal = filteredlist.findIndex(e => e.id === booksList[0].id)
 
     console.log(newVal)
 
@@ -248,7 +247,7 @@ class Bookshelves extends Component {
       <Context.Consumer>
         {value => {
           const {isNavClicked, commonBookList} = value
-
+          const {location} = this.props
           console.log(commonBookList)
 
           return (
@@ -257,9 +256,7 @@ class Bookshelves extends Component {
                 <ul className="sm-header-list">
                   <Link className="li" to="/">
                     <li
-                      className={
-                        this.props.location.pathname === '/' ? 'selected' : null
-                      }
+                      className={location.pathname === '/' ? 'selected' : null}
                     >
                       Home
                     </li>
@@ -267,9 +264,7 @@ class Bookshelves extends Component {
                   <Link className="li" to="/shelf">
                     <li
                       className={
-                        this.props.location.pathname === '/bookshelves'
-                          ? 'selected'
-                          : null
+                        location.pathname === '/bookshelves' ? 'selected' : null
                       }
                     >
                       Bookshelves
@@ -406,8 +401,10 @@ class Bookshelves extends Component {
 
       case 'ERROR':
         return this.renderError()
+      default:
+        return null
     }
   }
 }
-
+Bookshelves.contextType = Context
 export default Bookshelves

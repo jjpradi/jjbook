@@ -2,11 +2,12 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import Slider from 'react-slick'
-import Footer from '../Footer'
 import {Link} from 'react-router-dom'
 import './index.css'
 
 import {BsSearch} from 'react-icons/bs'
+import Footer from '../Footer'
+
 import Context from '../../context/Context'
 const apiConstant = {
   initial: 'INITIAL',
@@ -115,8 +116,8 @@ class Home extends Component {
 
   renderLoader = () => {
     return (
-      <div className='bg' testid='loader'>
-        <Loader type='TailSpin' color='#0284C7' height={50} width={50} />
+      <div className="bg" testid="loader">
+        <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
       </div>
     )
   }
@@ -184,44 +185,40 @@ class Home extends Component {
     } = this.state
 
     console.log(currentQuote, quoteList)
-
+    const {location} = this.props
     return (
       <Context.Consumer>
         {value => {
           const {isNavClicked} = value
 
           return (
-            <div className='home-page'>
+            <div className="home-page">
               {isNavClicked ? (
-                <ul className='sm-header-list'>
-                  <Link className='li' to='/'>
+                <ul className="sm-header-list">
+                  <Link className="li" to="/">
                     <li
-                      className={
-                        this.props.location.pathname === '/' ? 'selected' : null
-                      }
+                      className={location.pathname === '/' ? 'selected' : null}
                     >
                       Home
                     </li>
                   </Link>
-                  <Link className='li' to='/shelf'>
+                  <Link className="li" to="/shelf">
                     <li
                       className={
-                        this.props.location.pathname === '/bookshelves'
-                          ? 'selected'
-                          : null
+                        location.pathname === '/bookshelves' ? 'selected' : null
                       }
                     >
                       Bookshelves
                     </li>
                   </Link>
-                  <li className=''>
-                    <button onClick={this.onLogout} className='logout-button'>
+                  <li className="">
+                    <button onClick={this.onLogout} className="logout-button">
                       Logout
                     </button>
                   </li>
                 </ul>
               ) : (
-                <div className='empty-cont'></div>
+                <div className="empty-cont"></div>
               )}
               <div>
                 <h2>Find Your Next Favorite Books?</h2>
@@ -232,29 +229,29 @@ class Home extends Component {
                   insightful recommendations.
                 </p>
 
-                <div className='find-btn-2'>
-                  <button className='find-button' onClick={this.onFind}>
+                <div className="find-btn-2">
+                  <button className="find-button" onClick={this.onFind}>
                     Find Books
                   </button>
                 </div>
               </div>
 
-              <div className='books-bg'>
-                <div className='top-books-header'>
+              <div className="books-bg">
+                <div className="top-books-header">
                   <h2>Top Rated Books</h2>
 
-                  <div className='find-btn'>
-                    <button className='find-button' onClick={this.onFind}>
+                  <div className="find-btn">
+                    <button className="find-button" onClick={this.onFind}>
                       Find Books
                     </button>
                   </div>
                 </div>
 
-                <div className='slider-cont'>
+                <div className="slider-cont">
                   {isError ? (
                     this.renderFailure()
                   ) : (
-                    <div className='slider'>
+                    <div className="slider">
                       <Slider {...settings}>
                         {topBooks.map(e => (
                           <BookItem key={e.id} item={e} />
@@ -270,7 +267,7 @@ class Home extends Component {
                 </div>
               </div>
 
-              <div className='footer-part'>
+              <div className="footer-part">
                 <Footer />
               </div>
             </div>
@@ -282,11 +279,11 @@ class Home extends Component {
 
   renderFailure = () => {
     return (
-      <div className='bg'>
+      <div className="bg">
         <img
-          alt='failure view'
-          className='error-image'
-          src='https://res.cloudinary.com/dbbcdkvje/image/upload/v1768897944/Group_7522_ywwtft.png'
+          alt="failure view"
+          className="error-image"
+          src="https://res.cloudinary.com/dbbcdkvje/image/upload/v1768897944/Group_7522_ywwtft.png"
         />
 
         <p>Something went wrong. Please try again</p>
@@ -307,6 +304,8 @@ class Home extends Component {
 
       case 'FAILURE':
         return this.renderFailure()
+      default:
+        return null
     }
   }
 }

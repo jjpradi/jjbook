@@ -1,5 +1,7 @@
 import {Redirect, withRouter, Link} from 'react-router-dom'
+
 import './index.css'
+
 const NotFound = props => {
   const onHome = () => {
     const {history} = props
@@ -18,7 +20,7 @@ const NotFound = props => {
           we are sorry, the page you requested could not be found,Please go back
           to the homepage.
         </p>
-        <Link>
+        <Link   to="/" >
           {' '}
           <button onClick={onHome}> Go Back to Home</button>
         </Link>

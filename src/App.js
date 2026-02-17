@@ -43,7 +43,7 @@ class App extends Component {
     readstatus: '',
     commonBookList: [],
     ischanged: false,
-    gettingList:true,
+    gettingList: true,
   }
 
   changeContext = () => {
@@ -55,7 +55,7 @@ class App extends Component {
   getList = filtered => {
     console.log('filtered')
 
-    this.setState({commonBookList: filtered,gettingList:false})
+    this.setState({commonBookList: filtered, gettingList: false})
   }
 
   changeStatus = (id, val) => {
@@ -63,14 +63,12 @@ class App extends Component {
 
     this.setState({readstatus: val, ischanged: true})
 
-    console.log(this.state.commonBookList)
-
     console.log('cookBookList')
 
     this.setState(
       prevState => ({
         commonBookList: prevState.commonBookList.map(e =>
-          e.id == id ? {...e, readStatus: val} : e,
+          e.id === id ? {...e, readStatus: val} : e,
         ),
       }),
       this.seeChange,
@@ -78,13 +76,12 @@ class App extends Component {
   }
 
   seeChange = () => {
-    console.log(this.state.commonBookList)
-
     console.log('changedList')
   }
 
   render() {
-    const {isNavClicked, readstatus, commonBookList,gettingList, ischanged} = this.state
+    const {isNavClicked, readstatus, commonBookList, gettingList, ischanged} =
+      this.state
 
     return (
       <Context.Provider
