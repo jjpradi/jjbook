@@ -109,7 +109,7 @@ class BookDetails extends Component {
       aboutBook,
 
       aboutAuthor,
-      id
+      id,
     } = bookDetails
 
     return (
@@ -120,7 +120,6 @@ class BookDetails extends Component {
           console.log(readstatus)
 
           const onChangeStatus = event => {
-
             console.log(readstatus, bookDetails.id)
 
             changeStatus(bookDetails.id, event.target.value)
