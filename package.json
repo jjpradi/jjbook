@@ -3,11 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "engines": {
-    "node": ">=18",
+    "node": "24.x",
     "npm": ">=6"
  
-  "node": ">=18",
-   "npm": ">=6"
+  
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.9",
