@@ -41,8 +41,6 @@ const bookshelvesList = [
 ]
 
 class Bookshelves extends Component {
-  
-
   state = {
     searchInput: '',
     booksList: [],
