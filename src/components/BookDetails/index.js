@@ -78,14 +78,17 @@ class BookDetails extends Component {
         `https://apis.ccbp.in/book-hub/books/${match.params.id}`,
         options,
       )
-      console.log(response)
+console.log(options)
 
+      console.log(response)
       const data = await response.json()
 
       if (response.ok === true) {
         this.successView(data)
       } else {
         this.failureView(data)
+           console.log(response.json().errMsg)
+
       }
     } catch (e) {
       this.failureView()
@@ -126,17 +129,17 @@ class BookDetails extends Component {
           }
 
           return (
-            <div className='book-details-bg'>
-              <div className='book-details'>
-                <div className='book-info'>
-                  <img alt={title} className='books-img' src={coverPic} />
+            <div className="book-details-bg">
+              <div className="book-details">
+                <div className="book-info">
+                  <img alt={title} className="books-img" src={coverPic} />
 
                   <div>
                     <h5>{title}</h5>
                     <p>{authorName}</p>
                     <p>
                       Avg Rating
-                      <BsFillStarFill className='star-logo' size={9} />
+                      <BsFillStarFill className="star-logo" size={9} />
                       {rating}
                     </p>
 
@@ -153,25 +156,25 @@ class BookDetails extends Component {
                           </option>
                         ))}
                       </select>
-                      <span className='span-item'>
+                      <span className="span-item">
                         {ischanged ? readstatus : readStatus}{' '}
                       </span>
                     </p>
                   </div>
                 </div>
-                <hr className='hr' />
+                <hr className="hr" />
                 <div>
                   <h1>About Author</h1>
                   <p>{aboutAuthor}</p>
                 </div>
-                <hr className='hr' />
+                <hr className="hr" />
                 <div>
                   <h1>About Book</h1>
                   <p>{aboutBook}</p>
                 </div>
               </div>
 
-              <Footer className='footer-part' />
+              <Footer className="footer-part" />
             </div>
           )
         }}
@@ -181,10 +184,10 @@ class BookDetails extends Component {
 
   renderFailure = () => {
     return (
-      <div className='bg'>
+      <div className="bg">
         <img
-          alt='failure view'
-          src='https://res.cloudinary.com/dbbcdkvje/image/upload/v1768897944/Group_7522_ywwtft.png'
+          alt="failure view"
+          src="https://res.cloudinary.com/dbbcdkvje/image/upload/v1768897944/Group_7522_ywwtft.png"
         />
 
         <p>Something went wrong. Please try again</p>
@@ -195,8 +198,8 @@ class BookDetails extends Component {
 
   renderLoader = () => {
     return (
-      <div className='bg' testid='loader'>
-        <Loader type='TailSpin' />
+      <div className="bg" testid="loader">
+        <Loader type="TailSpin" />
       </div>
     )
   }
