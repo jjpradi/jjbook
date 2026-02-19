@@ -8,7 +8,7 @@ class Login extends Component {
 
   successView = data => {
     console.log(data)
-
+    console.log(data.jwt_token)
     Cookies.set('jwt_token', data.jwt_token, {expires: 30})
 
     const {history} = this.props

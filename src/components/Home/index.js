@@ -85,6 +85,9 @@ class Home extends Component {
         Authorization: `Bearer ${jwtToken}`,
       },
     }
+
+
+    console.log(options)
     const options2 = {
       method: 'GET',
       headers: {

@@ -61,7 +61,7 @@ class BookDetails extends Component {
   }
 
   getDetails = async () => {
-    const jwtToken = Cookies.get('jwtToken')
+    const jwtToken = Cookies.get('jwt_token')
     const options = {
       method: 'GET',
 
@@ -78,7 +78,7 @@ class BookDetails extends Component {
         `https://apis.ccbp.in/book-hub/books/${match.params.id}`,
         options,
       )
-console.log(options)
+      console.log(options)
 
       console.log(response)
       const data = await response.json()
@@ -87,8 +87,7 @@ console.log(options)
         this.successView(data)
       } else {
         this.failureView(data)
-           console.log(response.json().errMsg)
-
+        console.log(response.json().errMsg)
       }
     } catch (e) {
       this.failureView()

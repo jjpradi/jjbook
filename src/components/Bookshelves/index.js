@@ -179,7 +179,7 @@ class Bookshelves extends Component {
         Authorization: `Bearer ${jwtToken}`,
       },
     }
-
+    console.log(options)
     const {bookshelfName, searchInput} = this.state
     try {
       const response = await fetch(
